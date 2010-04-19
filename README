@@ -1,8 +1,9 @@
 The purpose of this project is to port Haskell SDL tutorial from http://web.animal-machine.com:8080/blog/2010/04/getting-started-with-sdl-in-haskell to Common Lisp.
 
-I decided to use ECL list implementation.
+Although my first decision was to use ECL and its native FFI support, I changed the decision on the fly.
+I switched to lispbuilder-sdl since writing SDL FFI bindings manually was pretty tedious task.
 
-Since I don't like large dependency chains, especially for this purpose, I decided I will not use CFFI or any other portable FFI package, but will use ECL FFI capabilities. Thus, this code is not intended to be portable across CL implementations.
+Also, I switched to SBCL from ECL, since lispbuilder-sdl was not working with ECL. The code is portable, so it should work with any CL implementation that supports CFFI. 
 
 If you want to participate, please fork and send push requests.
 

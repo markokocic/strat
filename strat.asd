@@ -1,7 +1,6 @@
 (defsystem :strat
     :serial t
     :version "0.02"
-    ;; :depends-on (:ffi-utils)
+    :depends-on (:lispbuilder-sdl)
     :components
-    ((:file "sdl")
-     (:file "strat")))
+    ((:file "strat")))

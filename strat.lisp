@@ -1,14 +1,15 @@
 (defpackage strat
-  (:use :common-lisp :sdl))
+  (:use :common-lisp))
 
 (in-package :strat)
 
 (defun main ()
-  (init *init-everything*)
-  (set-video-mode 640 480 8 *swsurface*)
-  (set-caption "SDL test!" "Sdl testiranaje")
-  (event-loop)
-  (quit))
-
+  (sdl:with-init nil
+    (sdl:window 640 480 :bpp 8 :sw t)
+    (sdl:set-caption "SDL Test!" "Sdl testing")
+    (event-loop)))
+    
 (defun event-loop ()
-  (sleep 3))
+  (sdl:with-events (:wait)
+    (:quit-event () t)
+    (:key-up-event () (sdl:push-quit-event))))
