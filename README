@@ -1,0 +1,10 @@
+The purpose of this project is to port Haskell SDL tutorial from http://web.animal-machine.com:8080/blog/2010/04/getting-started-with-sdl-in-haskell to Common Lisp.
+
+I decided to use ECL list implementation.
+
+Since I don't like large dependency chains, especially for this purpose, I decided I will not use CFFI or any other portable FFI package, but will use ECL FFI capabilities. Thus, this code is not intended to be portable across CL implementations.
+
+If you want to participate, please fork and send push requests.
+
+The whole project is MIT licensed.
+
